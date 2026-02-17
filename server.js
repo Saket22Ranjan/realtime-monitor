@@ -15,11 +15,8 @@ const io = socketIo(server);
 
 app.use(express.static("public"));
 
-io.on("connection", () => {
-  console.log("📡 Client Connected");
-});
+io.on("connection", () => console.log("📡 Client Connected"));
 
-// Run every 5 seconds
 cron.schedule("*/5 * * * * *", async () => {
   const metrics = await getMetrics();
 
@@ -30,4 +27,6 @@ cron.schedule("*/5 * * * * *", async () => {
   io.emit("metrics", metrics);
 });
 
-server.listen(3000, () => console.log("🚀 Server running on http://localhost:3000"));
+server.listen(3000, () =>
+  console.log("🚀 Server running at http://localhost:3000")
+);

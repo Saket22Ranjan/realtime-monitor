@@ -1,26 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Real-Time Monitoring</title>
+  <title>Monitoring Dashboard</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .chart-container {
+      height: 260px;
+      margin-bottom: 30px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+  </style>
 </head>
 
 <body>
-  <h1 style="text-align:center;">📊 System Monitoring Dashboard</h1>
 
-  <div style="width:80%;margin:auto;">
-    <canvas id="cpuChart"></canvas>
-  </div>
+<header>📊 Real-Time System Monitoring Dashboard</header>
 
-  <div style="width:80%;margin:auto;">
-    <canvas id="memoryChart"></canvas>
-  </div>
+<div class="container">
 
-  <div style="width:80%;margin:auto;">
-    <canvas id="diskChart"></canvas>
-  </div>
+<div class="cards">
+  <div class="card"><h3>CPU</h3><div id="cpuValue" class="value">0%</div></div>
+  <div class="card"><h3>Memory</h3><div id="memoryValue" class="value">0%</div></div>
+  <div class="card"><h3>Disk</h3><div id="diskValue" class="value">0%</div></div>
+  <div class="card"><h3>Download</h3><div id="netInValue" class="value">0 KB/s</div></div>
+  <div class="card"><h3>Upload</h3><div id="netOutValue" class="value">0 KB/s</div></div>
+</div>
 
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="script.js"></script>
+<div class="chart-container"><canvas id="cpuChart"></canvas></div>
+<div class="chart-container"><canvas id="memoryChart"></canvas></div>
+<div class="chart-container"><canvas id="diskChart"></canvas></div>
+<div class="chart-container"><canvas id="networkChart"></canvas></div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>

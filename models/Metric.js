@@ -4,6 +4,8 @@ const metricSchema = new mongoose.Schema({
   cpu: Number,
   memory: Number,
   disk: Number,
+  netIn: Number,
+  netOut: Number,
   createdAt: { type: Date, default: Date.now }
 });
 
