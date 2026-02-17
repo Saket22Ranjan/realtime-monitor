@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Real-Time Monitoring</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <h1 style="text-align:center;">📊 System Monitoring Dashboard</h1>
+
+  <div style="width:80%;margin:auto;">
+    <canvas id="cpuChart"></canvas>
+  </div>
+
+  <div style="width:80%;margin:auto;">
+    <canvas id="memoryChart"></canvas>
+  </div>
+
+  <div style="width:80%;margin:auto;">
+    <canvas id="diskChart"></canvas>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
